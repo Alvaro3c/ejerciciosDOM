@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <script>
+        //Ejercicio 1
+        let list = document.createElement('ul');
+        let item1 = document.createElement('li');
+        let item2 = document.createElement('li');
+
+        item1.innerHTML = 'hola'
+        item2.innerHTML = 'adios'
+        list.appendChild(item1)
+        list.appendChild(item2)
+        document.body.appendChild(list)
+
+
+        //Ejercicio 2
+
+        let btn = document.createElement('button');
+        btn.innerHTML = 'hazme click';
+        document.body.appendChild(btn);
+
+        let paragraph = document.createElement('p');
+        paragraph.innerHTML = 'esto es un parrafo';
+        document.body.appendChild(paragraph);
+
+        btn.addEventListener('click', () => {
+            paragraph.classList.toggle('hidden');
+        });
+
+        //Ejercicio 3
+        //Hacer que con onmouseover y onmouseout, se muestre/esconda el título de una foto cuando pases el raton sobre dicha foto
+
+        let image = document.createElement('img');
+        let title = document.createElement('p');
+
+        image.src = './assets/img1.jpg';
+        document.body.appendChild(image);
+        document.body.appendChild(title);
+
+        const handleOver = () => {
+            title.innerHTML = 'esto es una foto'
+        };
+
+        const handleMouseOut = () => {
+            title.innerHTML = ''
+        };
+
+        image.addEventListener('mouseout', handleMouseOut);
+        image.addEventListener('mouseover', handleOver);
+
+
+
+        //Ejercicio 1 bis:
+        //pensar el caso de añadir datos de un array de tareas de tamaño indeterminado
+        //["comprar","barrer","alimentar gato","colada"]
+
+        //Hacer un input
+        //boton para enviar contenido de input
+
+        let buttonSend = document.createElement('button');
+        let inputSend = document.createElement('input');
+        buttonSend.classList = 'btn-input';
+        buttonSend.innerHTML = 'Send task';
+        buttonSend.setAttribute('type', 'submit');
+
+        document.body.appendChild(buttonSend);
+        document.body.appendChild(inputSend);
+
+        let arrayTask = [];
+
+        textInput = document.querySelector('input');
+        buttonSubmit = document.querySelector('button');
+
+        textInput.addEventListener('input', () => {
+
+        });
+
+        buttonSubmit.addEventListener('click', () => {
+            arrayTask.push(/* incognita, probablemente sea el valor del input */);
+        });
+
+
+
+    </script>
+</body>
+
+</html>
